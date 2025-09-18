@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Socials from '../../components/Socials/Socials';
 import styles from './Register.module.css';
 
@@ -58,9 +59,9 @@ const Register = () => {
         <div className={styles.footer}>
           <p>
             Уже есть аккаунт?{' '}
-            <a href='#' className={styles.link}>
+            <Link to='/login'>
               Войти
-            </a>
+            </Link>
           </p>
         </div>
 
