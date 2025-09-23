@@ -213,6 +213,11 @@
   text-decoration: underline;
 }
 
+.error {
+  color: #ef4444;
+  font-size: 12px;
+}
+
 /* Адаптивность */
 @media (max-width: 480px) {
   .container {
