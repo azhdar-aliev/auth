@@ -4,18 +4,20 @@ import styles from './Login.module.css';
 import { useState } from 'react';
 
 const Login = () => {
-  const [formValues, setFormValues] = useState({})
-
+  const [formValues, setFormValues] = useState({});
+  const [checkbox, setCheckbox] = useState();
 
   const handleChange = (event) => {
-    const key = event.target.name
+    const key = event.target.name;
     setFormValues({ ...formValues, [key]: event.target.value });
-  }
+  };
 
   const handleClick = () => {
-    alert(formValues.login + " " + formValues.password)
-  }
-
+    alert(formValues.login + ' ' + formValues.password);
+  };
+  const handleCheckbox = () => {
+    setCheckbox(!checkbox);
+  };
   return (
     <div className={styles.container}>
       <div className={styles.formWrapper}>
@@ -37,7 +39,7 @@ const Login = () => {
 
           <div className={styles.options}>
             <label className={styles.checkbox}>
-              <input type='checkbox' />
+              <input onClick={handleCheckbox} type='checkbox' />
               <span className={styles.checkmark}></span>
               Запомнить меня
             </label>
@@ -46,7 +48,9 @@ const Login = () => {
             </a>
           </div>
 
-          <button onClick={handleClick} className={styles.submitButton}>Войти</button>
+          <button disabled={setCheckbox} onClick={handleClick} className={styles.submitButton}>
+            Войти
+          </button>
         </form>
 
         <div className={styles.footer}>
