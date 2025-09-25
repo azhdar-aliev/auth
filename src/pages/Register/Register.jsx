@@ -12,6 +12,7 @@ const Register = () => {
     resolver: yupResolver(registerSchema),
   });
 
+  
 
 const onSubmit = (formValues) => {
   alert('Вы зарегистрированы!');
